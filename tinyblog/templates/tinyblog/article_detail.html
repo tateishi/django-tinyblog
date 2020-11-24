@@ -1,0 +1,13 @@
+{% extends "tinyblog/_base.html" %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<div>
+  <p>{{ article.entry|linebreaksbr }}</p>
+  <a href="{% url 'tinyblog:index' %}">戻る</a>
+</div>
+{% endblock %}

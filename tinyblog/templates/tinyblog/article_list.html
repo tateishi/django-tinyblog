@@ -1,0 +1,15 @@
+{% extends "tinyblog/_base.html" %}
+
+{% block title %}
+記事のリスト
+{% endblock %}
+
+{% block content %}
+<ul>
+  {% for article in article_list %}
+  <li>{{ article.title }} <a href="{% url 'tinyblog:entry' article.id %}">表示</a><a href="{% url 'tinyblog:edit' article.id %}">変更</a></li>
+  {% endfor %}
+</ul>
+
+<p><a href="{% url 'tinyblog:add' %}">新規投稿</a></p>
+{% endblock %}

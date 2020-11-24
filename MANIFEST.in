@@ -1,0 +1,4 @@
+include LICENSE
+include README.md
+recursive-include tinyblog/static *
+recursive-include tinyblog/templates *

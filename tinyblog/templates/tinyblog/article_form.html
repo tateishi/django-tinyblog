@@ -1,0 +1,18 @@
+{% extends "tinyblog/_base.html" %}
+
+{% block title %}
+記事の入力・更新
+{% endblock %}
+
+{% block content %}
+{{ form.certifications.errors }}
+<h1>記事入力</h1>
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">投稿する</button>
+    <button onclick="location.href={% url 'tinyblog:index' %}">中止</button>
+  </form>
+</div>
+{% endblock %}
