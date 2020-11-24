@@ -1,0 +1,17 @@
+{% extends "tinyblog/_base.html" %}
+
+{% block title %}
+削除の確認
+{% endblock %}
+
+{% block content %}
+<h1>データの削除</h1>
+<p>このデータを削除します。よろしいですか。</p>
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Title: {{ article.title }}</p>
+  <p>Entry: {{ article.entry|linebreaksbr }}</p>
+  <button type="submit">削除</button>
+  <a href="{% url 'tinyblog:index' %}">キャンセル</a>
+</form>
+{% endblock %}

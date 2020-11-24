@@ -7,7 +7,12 @@
 {% block content %}
 <ul>
   {% for article in article_list %}
-  <li>{{ article.title }} <a href="{% url 'tinyblog:entry' article.id %}">表示</a><a href="{% url 'tinyblog:edit' article.id %}">変更</a></li>
+  <li>
+    {{ article.title }}
+    <a href="{% url 'tinyblog:entry' article.id %}">表示</a>
+    <a href="{% url 'tinyblog:edit' article.id %}">変更</a>
+    <a href="{% url 'tinyblog:delete' article.id %}">削除</a>
+  </li>
   {% endfor %}
 </ul>
 

@@ -23,3 +23,7 @@ class EditView(generic.UpdateView):
     model = Article
     form_class = ArticleForm
     success_url = reverse_lazy('tinyblog:index')
+
+class DeleteView(generic.DeleteView):
+    model = Article
+    success_url = reverse_lazy('tinyblog:index')
